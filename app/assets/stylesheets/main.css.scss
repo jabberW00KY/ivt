@@ -1,0 +1,57 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	margin: 0;
+	background-color: rgb(153, 153, 153);
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	font-family: Tahoma,Verdana,Helvetica,sans-serif;
+	font-size: 12px;
+}
+h1{	
+	text-align: center;	
+}
+a{
+	text-decoration: none;
+	color: rgb(136, 145, 168);
+	font-weight: normal;
+}
+#main{
+	margin: 0 auto;
+	width: 900px;
+	height: 100%;
+	background-color: #ffffff;
+	position: relative;
+	padding: 0;
+	display: block;
+}
+.link_main{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	top: 0px;
+	font-size: 16px;
+	margin-left: 0px;
+}
+#header{
+	width: 100%;
+}
+#hrf{
+	font-size: 16px;
+}
+ul{
+	display: inline-block;
+	position: absolute;
+	right: 5%;
+}
+.menu{
+	display: inline;
+}
+.search{
+	width: 20%;
+	position: absolute;
+	right: 5%;
+	border: 1px solid #000;
+}

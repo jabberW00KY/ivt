@@ -32,9 +32,21 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'execjs'
+gem 'therubyracer'
 
+# Если вам просто нужен Slim
+gem 'slim'
+
+# Если вам нужен Slim и генераторы Scaffold'ов
+gem 'slim-rails'
+
+#gem "activeadmin", "~> 0.6.3"
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
+gem 'devise'
+
+gem 'letter_opener'
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -1,0 +1,18 @@
+#main
+	#header				
+		=link_to("/", {class: "link_main"}) 
+			=image_tag("/images/chuvsu_logo.jpg")
+		h1(class="link_main")
+			=link_to("ЧУВАШСКИЙ ГОСУДАРСТВЕННЫЙ", "/")
+			br 
+			=link_to("УНИВЕРСИТЕТ имени И.Н.Ульянова", "/")
+		ul(class="top_links")
+			li(class="menu")
+				=link_to("Контакты | ", "/contacts", {class: "test"})
+			li(class="menu")
+				=link_to("Карта сайта | ", "/sitemap", {class: "test"})
+			li(class="menu")
+				=link_to("Войти", "/login", {class: "test"})	
+		.search
+	=link_to("/", {class: "link_main"}) 
+		=image_tag("/images/head_banner.jpg")
