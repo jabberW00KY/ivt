@@ -4,6 +4,6 @@ class MainController < ApplicationController
 	end
 
 	def login
-		
+		@title="Войти в систему"
 	end
 end

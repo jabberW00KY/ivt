@@ -1,42 +1,10 @@
-#main
-	#header				
-		=link_to("/", {class: "link_main"}) 
-			=image_tag("/images/chuvsu_logo.jpg")
-		h1(class="link_main")
-			=link_to("ЧУВАШСКИЙ ГОСУДАРСТВЕННЫЙ", "/", {class: "link_head"})
-			br 
-			=link_to("УНИВЕРСИТЕТ имени И.Н.Ульянова", "/", {class: "link_head"})
-		ul(class="top_links")
-			li(class="menu")
-				=link_to("Контакты | ", "/contacts", {class: "test"})
-			li(class="menu")
-				=link_to("Карта сайта | ", "/sitemap", {class: "test"})
-			li(class="menu")
-				=link_to("Войти", "/login", {class: "test"})	
-		.search
-	=link_to("/", {class: "link_main"}) 
-		=image_tag("/images/head_banner.jpg")
-	.main_menu
-		ul(class="m_menu")
-			li(id="menu_item1" class="menu_items")
-				=link_to("Абитуриент", "/abit", {class: "menu_link"})
-			li(id="menu_item2" class="menu_items")
-				=link_to("Новости", "/news", {class: "menu_link"})
-			li(id="menu_item3" class="menu_items")
-				=link_to("Факультет", "/facult", {class: "menu_link"})
-			li(id="menu_item4" class="menu_items")
-				=link_to("Студенты", "/stud", {class: "menu_link"})
-			li(id="menu_item5" class="menu_items")
-				=link_to("Фотохроника", "http://vk.com/photos129303046", {class: "menu_link"})
-			li(id="menu_item6" class="menu_items")
-				=link_to("Олимпиада для школьников", "/olymp", {class: "menu_link"})
-	#content
-		#left_menu
-			h2 НОВОСТИ
-			#display_news
-			h2 ССЫЛКИ
-		table(class="main_content")
-			tr
-				td	Тут фото декана =)
-	#about_bottom
-	#bottom_links
+-content_for :last_news_body do
+    p Russian footbal team is world winner! O_O
+-content_for :chosen_content
+     p Факультет Информатики и вычислительной техники образован в 2000-м году на базе кафедр факультета радиоэлектроники и информатики и математического факультета.
+
+    p На факультете осуществляется подготовка специалистов по информационной безопасности 090303 Информационная безопасность автоматизированных систем, бакалавров по
+     направлениям 090900 Информационная безопасность (профиль 06 – Информационно-аналитические системы финансового мониторинга) и 230100 Информатика и 
+        вычислительная техника (профиль 01 – Вычислительные машины, комплексы, системы и сети; профиль 04 – Программное обеспечение средств вычислительной техники 
+        и автоматизированных систем) и магистров по направлению 230100 Информатика и вычислительная техника «Компьютерное моделирование».
+

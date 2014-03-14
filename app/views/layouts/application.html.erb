@@ -7,8 +7,72 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div id="main">
+	<div id="header">
+		<a class="link_main" href="/">
+			<img alt="Chuvsu logo" src="/images/chuvsu_logo.jpg" />
+		</a>
+		<h1 class="link_main">
+			<a class="link_head" href="/">ЧУВАШСКИЙ ГОСУДАРСТВЕННЫЙ</a>
+			<br /><a class="link_head" href="/">УНИВЕРСИТЕТ имени И.Н.Ульянова</a>
+		</h1>
+		<ul class="top_links">
+			<li class="menu">
+				<a class="test" href="/contacts">Контакты | </a>
+			</li>
+			<li class="menu">
+				<a class="test" href="/sitemap">Карта сайта | </a>
+			</li>
+			<li class="menu">
+				<a class="test" href="/login">Войти</a>
+			</li>
+		</ul>
+		<div class="search"></div>
+	</div>
+	<a class="link_main" href="/">
+		<img alt="Head banner" src="/images/head_banner.jpg" />
+	</a>
+	<div class="main_menu">
+		<ul class="m_menu">
+			<li class="menu_items" id="menu_item1">
+				<a class="menu_link" href="/abit">Абитуриент</a>
+			</li>
+			<li class="menu_items" id="menu_item2">
+				<a class="menu_link" href="/news">Новости</a>
+			</li>
+			<li class="menu_items" id="menu_item3">
+				<a class="menu_link" href="/facult">Факультет</a>
+			</li>
+			<li class="menu_items" id="menu_item4">
+				<a class="menu_link" href="/stud">Студенты</a>
+			</li>
+			<li class="menu_items" id="menu_item5">
+				<a class="menu_link" href="http://vk.com/photos129303046">Фотохроника</a>
+			</li>
+			<li class="menu_items" id="menu_item6">
+				<a class="menu_link" href="/olymp">Олимпиада для школьников</a>
+			</li>
+		</ul>
+	</div>
+	<div id="content">
+		<div id="left_menu">
+			<h2>НОВОСТИ</h2>
+			<div id="display_news">
+				<%= yield :last_news_body %>
+			</div>
+			<h2>ССЫЛКИ</h2>
+			<div id="display_links">
+				<%= yield :link_body %>
+			</div>
+		</div>
+		<%= yield :chosen_content %>
+	</div>
+	<div id="about_bottom">
+			
+	</div>
+	<div id="bottom_links">
+			
+	</div>
+	</div>
 </body>
 </html>
