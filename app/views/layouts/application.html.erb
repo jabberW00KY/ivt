@@ -24,7 +24,7 @@
 				<a class="test" href="/sitemap">Карта сайта | </a>
 			</li>
 			<li class="menu">
-				<a class="test" href="/login">Войти</a>
+				<a class="test" href="/users/sign_in">Войти</a>
 			</li>
 		</ul>
 		<div class="search"></div>
@@ -55,6 +55,9 @@
 		</ul>
 	</div>
 	<div id="content">
+		<table>
+			<tr>
+				<td>
 		<div id="left_menu">
 			<h2>НОВОСТИ</h2>
 			<div id="display_news">
@@ -65,7 +68,14 @@
 				<%= yield :link_body %>
 			</div>
 		</div>
-		<%= yield :chosen_content %>
+				</td>
+				<td>
+		<div class='out_body'>
+		<%= yield %>
+		</div>
+				</td>
+				</tr>
+				</table>
 	</div>
 	<div id="about_bottom">
 			
