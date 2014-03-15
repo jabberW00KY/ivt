@@ -1,6 +1,6 @@
 -content_for :chosen_content
 	=form_for :post, :authenticity_token => true do |f|
-		p Введите имя пользователя
+		p Введите пароль
 		input(type='text' name='login' maxlength=25)
 		p Введите пароль
 		input(type='password' name='pass' maxlength=30)

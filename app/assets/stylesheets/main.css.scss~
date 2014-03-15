@@ -165,5 +165,5 @@ p{
 }
 input{
 	position: relative;
-	display: inline-box;
+	display: inline;
 }

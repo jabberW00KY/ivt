@@ -9,7 +9,6 @@ class MainController < ApplicationController
 	
 	def auth_data_send
 		@taken_login = params[:login]
-		redirect "/"
 		render 'main'	
 	end
 end
