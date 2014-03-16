@@ -10,7 +10,7 @@ Ivt::Application.routes.draw do
 
   # Example of regular route:
   get '/news' => 'news#show'
-  get '/edit' => 'news#edit'
+  get '/edit' => 'news#index'
   #post '/login'=> 'main#login'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
