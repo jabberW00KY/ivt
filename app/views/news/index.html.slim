@@ -1,0 +1,18 @@
+h1 Новости ФИВТ
+- @news.each do |news|
+  table
+    tr
+      td = news.title
+    tr
+      td = BlueCloth.new(news.body).to_html().html_safe()
+    tr
+      td = news.post_date
+    tr
+      td = 'Опубликовал: ' + news.author
+    tr
+      td = link_to 'Показать', news
+    tr
+      td = link_to 'Редактировать', edit_news_path(news)
+      td = link_to 'Удалить', news, data: {:confirm => 'Are you sure?'}, :method => :delete
+  br
+  = link_to 'New News', new_news_path

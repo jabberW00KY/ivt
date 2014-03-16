@@ -24,7 +24,12 @@
 				<a class="test" href="/sitemap">Карта сайта | </a>
 			</li>
 			<li class="menu">
-				<a class="test" href="/users/sign_in">Войти</a>
+				<% if user_signed_in? %>
+  					<%# link_to "My Profile", user_root_path %>
+  					<%= link_to('Выход', destroy_user_session_path, :method=>'delete') %>  
+				<% else %>
+					<a class="test" href="/users/sign_in">Войти</a>
+				<% end %>
 			</li>
 		</ul>
 		<div class="search"></div>
@@ -61,7 +66,9 @@
 		<div id="left_menu">
 			<h2>НОВОСТИ</h2>
 			<div id="display_news">
-				<%= yield :last_news_body %>
+				<% @news.each do |news| %>
+					<%= link_to(news.title,"news/" + news.id.to_s) %>
+				<% end %>
 			</div>
 			<h2>ССЫЛКИ</h2>
 			<div id="display_links">
@@ -71,11 +78,11 @@
 				</td>
 				<td>
 		<div class='out_body'>
-		<%= yield %>
+			<%= yield %>
 		</div>
-				</td>
-				</tr>
-				</table>
+		</td>
+		</tr>
+		</table>
 	</div>
 	<div id="about_bottom">
 			

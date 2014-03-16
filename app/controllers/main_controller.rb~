@@ -1,14 +1,14 @@
 class MainController < ApplicationController
 	def main
 		@title="О Факультете | vt.chuvsu.ru"
+		@news = News.all
 	end
 
-	def login
-		@title="Войти в систему"
+	def edit
+		
 	end
-	
-	def auth_data_send
-		@taken_login = params[:login]
-		render 'main'	
+
+	def show
+
 	end
 end

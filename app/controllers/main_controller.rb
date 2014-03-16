@@ -1,5 +1,6 @@
 class MainController < ApplicationController
 	def main
 		@title="О Факультете | vt.chuvsu.ru"
-	end	
+		@news = News.all
+	end
 end

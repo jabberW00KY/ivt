@@ -1,13 +1,16 @@
 Ivt::Application.routes.draw do
+  resources :news
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   #resources :login
   # You can have the root of your site routed with "root"
-   root 'main#main'
+  root 'main#main'
 
   # Example of regular route:
-  #get '/login' => 'main#login'
+  get '/news' => 'news#show'
+  get '/edit' => 'news#edit'
   #post '/login'=> 'main#login'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
