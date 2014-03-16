@@ -11,10 +11,12 @@ Ivt::Application.routes.draw do
   # Example of regular route:
   get '/news' => 'news#show'
   get '/edit' => 'news#index'
+  get '/abit' => 'main#abit'
+  get '/facult' => 'main#facult'
   #post '/login'=> 'main#login'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
+  #map.search "search", :controller => "search"
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

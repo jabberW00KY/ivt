@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316065641) do
+ActiveRecord::Schema.define(version: 20140316183244) do
 
   create_table "news", force: true do |t|
     t.string   "title"
     t.text     "body"
     t.date     "post_date"
     t.string   "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,5 +50,15 @@ ActiveRecord::Schema.define(version: 20140316065641) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "users_roles", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users_roles", ["role_id"], name: "index_users_roles_on_role_id"
+  add_index "users_roles", ["user_id"], name: "index_users_roles_on_user_id"
 
 end

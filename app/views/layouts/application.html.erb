@@ -31,8 +31,14 @@
 					<a class="test" href="/users/sign_in">Войти</a>
 				<% end %>
 			</li>
+			<br>
+			<li class="menu">
+				<%= form_tag("/search", method: "get", class: "search_form") do %>
+  					<%= text_field_tag(:q) %>
+  					<%= submit_tag("Search") %>
+				<% end %>
+			</li>
 		</ul>
-		<div class="search"></div>
 	</div>
 	<a class="link_main" href="/">
 		<img alt="Head banner" src="/images/head_banner.jpg" />
@@ -70,7 +76,9 @@
 			</div>
 			<h2>ССЫЛКИ</h2>
 			<div id="display_links">
-				<%= yield :link_body %>
+				<%= link_to("ИВТ Вконтакте", "http://vk.com/id129303046") %>
+				<br> <br>
+				<%= link_to("ЧГУ им. Ульянова", "http://chuvsu.ru") %>
 			</div>
 		</div>
 				</td>
@@ -83,10 +91,10 @@
 		</table>
 	</div>
 	<div id="about_bottom">
-			
+		Copyright © ФГОУ ВПО "Чувашский Государственный Университет им. И.Н.Ульянова" - Кафедра Вычислительной Техники 
 	</div>
 	<div id="bottom_links">
-			
+		Здесь типа ссылки для связи с админами
 	</div>
 	</div>
 </body>
