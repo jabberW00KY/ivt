@@ -152,15 +152,14 @@ h2{
 #about_bottom{
 	color: #ffffff;
 	margin: 0px;
-	top: -5px;
 	width: 100%;
 	display: inline-block;
 	position: relative;
 	text-align: center;
 	background-color: #808aa3;
+	top: 100%;
 }
 #bottom_links{
-	top: -5px;
 	font-family: Tahoma,Verdana,Helvetica,sans-serif;
 	margin: 0px;
 	width: 100%;
@@ -200,7 +199,7 @@ table{
 .out_body{
 	font-family: Tahoma,Verdana,Helvetica,sans-serif;
 	width: 70%;
-	height: 500px;
+	height: 100%;
 }
 #display_links{
 	font-family: Tahoma,Verdana,Helvetica,sans-serif;

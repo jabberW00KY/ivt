@@ -5,4 +5,11 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
+
+   before_filter :ensure_setting
+   private
+
+   def ensure_setting
+     @top_news = News.all.reverse_order.take(5)
+   end
 end

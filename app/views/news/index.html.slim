@@ -2,6 +2,10 @@
 br
 =image_tag("gray_gradient.gif")
 #page_name Новости
+-if user_signed_in?
+  -if current_user.id == 1
+    = link_to 'Добавить новость', new_news_path
+br
 - @news.each do |news|
   .title = BlueCloth.new(news.title).to_html().html_safe()
   .news_body = BlueCloth.new(news.body).to_html().html_safe()
@@ -9,12 +13,9 @@ br
   .author = 'Опубликовал: ' + news.author
   = link_to 'Показать ', news
   -if user_signed_in?
-    -if can? :update, news
+    -if current_user.id == 1 #Надо задать набор значений id админов
     	= link_to 'Редактировать ', edit_news_path(news)
-    -if can? :destroy, news
+    -if current_user.id == 1
     	= link_to 'Удалить', news, data: {:confirm => 'Are you sure?'}, :method => :delete
   hr(color = "#a0a0a0" size="1")
 br
--if user_signed_in?
-  -if can? :create, @news
-  	= link_to 'New News', new_news_path

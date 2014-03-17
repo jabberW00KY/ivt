@@ -25,7 +25,7 @@
 			</li>
 			<li class="menu">
 				<% if user_signed_in? %>
-  					<%# link_to "My Profile", user_root_path %>
+  					<%= link_to current_user.email, root_path %>
   					<%= link_to('Выход', destroy_user_session_path, :method=>'delete') %>  
 				<% else %>
 					<a class="test" href="/users/sign_in">Войти</a>
@@ -65,6 +65,9 @@
 			</li>
 		</ul>
 	</div>
+	<table>
+	<tr>
+	<td>
 	<div id="content">
 		<table>
 			<tr>
@@ -72,7 +75,9 @@
 		<div id="left_menu">
 			<h2>НОВОСТИ</h2>
 			<div id="display_news">
-				
+				<% @top_news.each do |top_news| %>
+				<%= link_to(BlueCloth.new(top_news.title).to_html().html_safe(), "/news/"+top_news.id.to_s) %>
+				<% end %>
 			</div>
 			<h2>ССЫЛКИ</h2>
 			<div id="display_links">
@@ -90,6 +95,10 @@
 		</tr>
 		</table>
 	</div>
+	</td>
+	</tr>
+	<tr>
+	<td>
 	<div id="about_bottom">
 		Copyright © ФГОУ ВПО "Чувашский Государственный Университет им. И.Н.Ульянова" - Кафедра Вычислительной Техники 
 	</div>
@@ -97,5 +106,8 @@
 		Здесь типа ссылки для связи с админами
 	</div>
 	</div>
+	</td>
+	</tr>
+	</table>
 </body>
 </html>
