@@ -13,6 +13,6 @@ p
   strong Author:
   = @news.author
 -if user_signed_in?
-	= link_to 'Редактировать запись', edit_news_path(@news)
-	'|
+  -if current_user == 1
+	  = link_to 'Редактировать запись', edit_news_path(@news)
 = link_to 'Назад', news_index_path
