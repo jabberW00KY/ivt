@@ -50,9 +50,8 @@ gem 'letter_opener'
 gem 'bluecloth'
 # Use unicorn as the app server
 # gem 'unicorn'
-gem 'cancan'
+#gem 'cancan'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
+gem 'seed_dump'
 # gem 'debugger', group: [:development, :test]

@@ -1,9 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-Role.create(:name => :admin)
-Role.create(:name => :user)
+User.create!([
+  {email: "dgrigoriev2@gmail.com", encrypted_password: "$2a$10$gRuobagwnlhct.kdQJIDfe73FOOk0aMZcigREIeG5SY0Ukt8Q1HKK", reset_password_token: "70095341abd050e1a30d878029eed61a993a54b3b2196c602d1e991239e56cf4", reset_password_sent_at: "2014-03-16 17:42:27", remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2014-03-17 22:13:16", last_sign_in_at: "2014-03-17 21:51:33", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
+  {email: "jabrwky@dev.org", encrypted_password: "$2a$10$669eGoQVliQQswNXzIyHruA8cB6sHdAPIA.M4/AfKocTev2roAenm", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-03-17 22:08:43", last_sign_in_at: "2014-03-17 22:08:43", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
+])
+News.create!([
+  {title: "Сегодня воскресенье", body: "*Здесь должна быть новость в формате markdown.*\r\nОписание формата файла\r\n\r\nText file created using one of several possible dialects of the *Markdown language*; uses plain text formatting but includes inline text symbols that define how to format the text (e.g., bold, indentations, headers, table formatting); designed for authoring plain text documentation that can be easily converted to HTML.\r\n\r\nMD files are not only useful for HTML documentation systems, but also for source code version control. This is because the files can be compared against historical revisions in human-readable text (whereas a binary format cannot be easily compared). Projects created with GitHub, a popular online version control system, often use a file named README.md, which contains the readme for the project.\r\n\r\nJohn Gruber, the developer of Markdown, has created a Perl program for converting Markdown to HTML. The program, called \"Markdown,\" is available at the Daring Fireball website.\r\n\r\nNOTE: Markdown files also used the .MARKDOWN extension.", post_date: "2014-03-16", author: "jabberwooky"},
+  {title: "Начало занятий с 10 февраля", body: "Начало занятий второго семестра с 10 февраля 2014 года", post_date: "2014-03-16", author: "jabberwooky"}
+])
+Users.create!([
+  {email: "dgrigoriev2@gmail.com", encrypted_password: "$2a$10$gRuobagwnlhct.kdQJIDfe73FOOk0aMZcigREIeG5SY0Ukt8Q1HKK", reset_password_token: "70095341abd050e1a30d878029eed61a993a54b3b2196c602d1e991239e56cf4", reset_password_sent_at: "2014-03-16 17:42:27", remember_created_at: nil, sign_in_count: 7, current_sign_in_at: "2014-03-17 22:13:16", last_sign_in_at: "2014-03-17 21:51:33", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
+  {email: "jabrwky@dev.org", encrypted_password: "$2a$10$669eGoQVliQQswNXzIyHruA8cB6sHdAPIA.M4/AfKocTev2roAenm", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-03-17 22:08:43", last_sign_in_at: "2014-03-17 22:08:43", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
+])
