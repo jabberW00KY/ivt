@@ -33,12 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
-    
-    create_table :admins do |t|
-      t.integer :user_id
-      t.timestamps
-    end
-    
+
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true

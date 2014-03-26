@@ -1,0 +1,9 @@
+class CreateWhoIsAdmins < ActiveRecord::Migration
+  def change
+    create_table :who_is_admins do |t|
+      t.datetime :date
+
+      t.timestamps
+    end
+  end
+end

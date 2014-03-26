@@ -1,0 +1,3 @@
+class WhoIsAdmin < ActiveRecord::Base
+	belongs_to :users 
+end

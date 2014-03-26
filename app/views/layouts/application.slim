@@ -1,0 +1,77 @@
+doctype html
+html
+  head
+    title= @title
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    #main
+      #header
+        a.link_main href="/" 
+          img alt=("Chuvsu logo") src="/images/chuvsu_logo.jpg" 
+        h1.link_main
+          a.link_head href="/"  ЧУВАШСКИЙ ГОСУДАРСТВЕННЫЙ
+          br/
+          a.link_head href="/"  УНИВЕРСИТЕТ имени И.Н.Ульянова
+        ul.top_links
+          li.menu
+            a.test href="/contacts"  Контакты | 
+          li.menu
+            a.test href="/sitemap"  Карта сайта | 
+          li.menu
+            - if user_signed_in?
+              = link_to current_user.email, root_path
+              = link_to(' Выход', destroy_user_session_path, :method=>'delete')
+            - else
+              a.test href="/users/sign_in"  Войти
+          br
+            li.menu
+              = form_tag("/search", method: "get", class: "search_form") do
+                = text_field_tag(:q)
+                = submit_tag("Search")
+      a.link_main href="/" 
+        img alt=("Head banner") src="/images/head_banner.jpg"
+      .main_menu
+        ul.m_menu
+          li#menu_item1.menu_items
+            a.menu_link href="/abit"  Абитуриент
+          li#menu_item2.menu_items
+            a.menu_link href="/news"  Новости
+          li#menu_item3.menu_items
+            a.menu_link href="/facult"  Факультет
+          li#menu_item4.menu_items
+            a.menu_link href="/stud"  Студенты
+          li#menu_item5.menu_items
+            a.menu_link href="http://vk.com/photos129303046"  Фотохроника
+          li#menu_item6.menu_items
+            a.menu_link href="/olymp"  Олимпиада для школьников
+      table
+        tr
+          td
+            #content
+              table
+                tr
+                  td
+                    #left_menu
+                      h2 НОВОСТИ
+                      #display_news
+                        - @top_news.each do |top_news|
+                          = link_to(BlueCloth.new(top_news.title).to_html().html_safe(), "/news/"+top_news.id.to_s)
+                      h2 ССЫЛКИ
+                      #display_links
+                        = link_to("ИВТ Вконтакте", "http://vk.com/id129303046")
+                        br
+                          br
+                            = link_to("ЧГУ им. Ульянова", "http://chuvsu.ru")
+                  td
+                    .out_body
+                      = notice 
+                      br 
+                      = yield
+        tr
+          td
+            #about_bottom
+              | Copyright © ФГОУ ВПО "Чувашский Государственный Университет им. И.Н.Ульянова" - Кафедра Вычислительной Техники
+            #bottom_links
+              | Здесь типа ссылки для связи с админами

@@ -1,16 +1,15 @@
-p#notice = notice
 
 p
-  strong Title:
+  strong Title: 
   = BlueCloth.new(@news.title).to_html().html_safe()
 p
-  strong Body:
+  strong Body: 
   = BlueCloth.new(@news.body).to_html().html_safe()
 p
-  strong Post date:
+  strong Post date: 
   = @news.post_date
 p
-  strong Author:
+  strong Author: 
   = @news.author
 -if user_signed_in?
   -if current_user == 1

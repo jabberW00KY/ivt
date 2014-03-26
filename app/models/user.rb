@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :users_roles
   has_many :roles, :through => :users_roles
+  belongs_to :admin
 end
