@@ -1,11 +1,9 @@
 class NewsController < ApplicationController
   before_action :set_news, only: [:show, :edit, :update, :destroy]
-  rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, :alert => exception.message
-  end
   # GET /news
   # GET /news.json
   def index
+    @admin = Admins.new
     @news = News.all.reverse_order
   end
 
@@ -26,7 +24,7 @@ class NewsController < ApplicationController
 
   # GET /news/1/edit
   def edit
-  	
+  	@admin = Admins.all
   end
 
   # POST /news

@@ -3,6 +3,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     create_table(:users) do |t|
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
+      t.integer :role,		    :null => false, :default => "0"
       t.string :encrypted_password, :null => false, :default => ""
 
       ## Recoverable
@@ -31,11 +32,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
 
-      t.timestamps
-    end
-    
-    create_table :admins do |t|
-      t.integer :user_id
       t.timestamps
     end
     

@@ -3,7 +3,6 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
-    @admin = Admins.new
     @news = News.all.reverse_order
   end
 
@@ -24,7 +23,6 @@ class NewsController < ApplicationController
 
   # GET /news/1/edit
   def edit
-  	@admin = Admins.all
   end
 
   # POST /news
