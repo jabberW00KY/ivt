@@ -13,23 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20140326175627) do
 
-  create_table "admins", force: true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "news", force: true do |t|
     t.string   "title"
     t.text     "body"
     t.date     "post_date"
     t.string   "author"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "roles", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,15 +37,5 @@ ActiveRecord::Schema.define(version: 20140326175627) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "users_roles", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "role_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users_roles", ["role_id"], name: "index_users_roles_on_role_id"
-  add_index "users_roles", ["user_id"], name: "index_users_roles_on_user_id"
 
 end

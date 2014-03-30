@@ -55,3 +55,4 @@ gem 'bluecloth'
 # gem 'capistrano', group: :development
 gem 'seed_dump'
 # gem 'debugger', group: [:development, :test]
+gem 'foundation-rails'
