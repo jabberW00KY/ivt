@@ -10,6 +10,11 @@ html lang="en"
   = javascript_include_tag "vendor/modernizr"
   = csrf_meta_tag
 
+#myModal.reveal-modal data-reveal="" 
+  h2 Sign in
+  =link_to 'Go to Sign In page', new_user_session_path
+  a.close-reveal-modal ×
+
 nav.top-bar data-topbar="" 
   ul.title-area
     li.name
@@ -19,14 +24,53 @@ nav.top-bar data-topbar=""
       a href="#"  Menu
   section.top-bar-section
     ul.right
+      - if user_signed_in?
+        li.active
+          = link_to current_user.email, root_path
+      -else
+        li.active
+          a data-reveal="" data-reveal-id="myModal" href="/users/login"  Войти
       li.has-dropdown
         a href="#"  Полезные ссылки
         ul.dropdown
           li
             a href="#"  Контакты
-body
-  == yield
-
+        -if user_signed_in?
+          li
+            = link_to(' Выход', destroy_user_session_path, :method=>'delete')
+-if notice != nil
+  .alert-box.success.radius data-alert="" 
+    =notice
+.row
+  .large-3.columns 
+    li(class="logo")
+      =image_tag("/images/logo.jpg", size: "300x250", alt:"IVT Logo")
+  .large-6.columns 
+    li
+      br
+      dl.sub-nav
+        dt Ссылки:
+        dd.active
+          a href="/facult"  Факультет
+        dd
+          a href="/stud"  Студенты
+        dd
+          a href="/news"  Новости
+        dd
+          a href="/abit"  Абитуриент
+      .row data-equalizer="" 
+        .large-20.columns.panel data-equalizer-watch="" 
+          body
+            == yield
+  br
+  .large-3.columns
+    .panel.clearfix
+      h5 Новости
+      -@top_news.each do |top_news|
+        =link_to(top_news.title, "/news/"+top_news.id.to_s)
+    .panel.clearfix
+      h5 Ссылки
+br
 ul.breadcrumbs
   li
     a href="#" Написать
