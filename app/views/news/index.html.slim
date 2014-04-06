@@ -1,4 +1,26 @@
-=link_to("Главная>>Новости", "/news")
+#vk_api_transport
+javascript:
+  | window.vkAsyncInit = function() {
+    | VK.init({
+      | apiId: 4291417
+    | });
+  | };
+
+  | setTimeout(function() {
+    | var el = document.createElement("script");
+    | el.type = "text/javascript";
+    | el.src = "//vk.com/js/api/openapi.js";
+    | el.async = true;
+    | document.getElementById("vk_api_transport").appendChild(el);
+  | }, 0);
+  | var script = document.createElement('SCRIPT');
+  | script.src = "https://api.vk.com/method/users.get?user_id=chuvsu_ivt&v=5.17&access_token=533bacf01e11f55b536a565b57531ac114461ae8736d6506a3&callback=callbackFunc";
+  | document.getElementsByTagName("head")[0].appendChild(script);
+  | function callbackFunc(result) {
+  | alert(result);
+  | }
+
+=link_to("Главная", "/")
 br
 =image_tag("gray_gradient.gif")
 #page_name Новости

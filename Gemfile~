@@ -21,7 +21,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'best_in_place', :git => 'https://github.com/aaronchi/best_in_place.git'
+gem 'best_in_place'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -57,3 +57,4 @@ gem 'bluecloth'
 gem 'seed_dump'
 # gem 'debugger', group: [:development, :test]
 gem 'foundation-rails'
+gem 'best_in_place'

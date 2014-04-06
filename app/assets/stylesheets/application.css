@@ -23,3 +23,6 @@ body{
 .row { 
 	max-width: 90% !important; 
 }
+li{
+	list-style-type: none !important;
+}

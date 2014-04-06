@@ -43,6 +43,7 @@ class NewsController < ApplicationController
 
   # PATCH/PUT /news/1
   # PATCH/PUT /news/1.json
+  respond_to :html, :json
   def update
     respond_to do |format|
       if @news.update(news_params)
@@ -52,6 +53,7 @@ class NewsController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @news.errors, status: :unprocessable_entity }
       end
+      respond_with @news
     end
   end
 

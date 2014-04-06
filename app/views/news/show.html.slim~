@@ -1,10 +1,10 @@
 
 p
   strong Title: 
-  = BlueCloth.new(@news.title).to_html().html_safe()
+  = best_in_place @news, :title
 p
   strong Body: 
-  = BlueCloth.new(@news.body).to_html().html_safe()
+  = best_in_place @news, BlueCloth.new(:body).to_html().html_safe()
 p
   strong Post date: 
   = @news.post_date
@@ -12,6 +12,6 @@ p
   strong Author: 
   = @news.author
 -if user_signed_in?
-  -if current_user == 1
+  -if current_user.role == 1
 	  = link_to 'Редактировать запись', edit_news_path(@news)
 = link_to 'Назад', news_index_path
